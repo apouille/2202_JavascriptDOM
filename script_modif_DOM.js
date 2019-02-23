@@ -80,7 +80,18 @@ function changeViewButtons(){
 	}
 }
 
+//8) AJout Pyramide inversée
 
+function pyramid(){
+	let newDiv = document.createElement("div")
+	newDiv.classList.add("row")
+
+	let row = document.getElementsByClassName('row')[1].parentNode;
+	row.appendChild(newDiv);
+
+	let jsRow = document.getElementsByClassName('col-md-4')[2];
+	row.appendChild(jsRow);
+}
 
 
 changeTitles()
@@ -90,3 +101,4 @@ populateImages()
 deleteLastCards()
 changeCardsText()
 changeViewButtons()
+pyramid()
