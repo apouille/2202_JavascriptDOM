@@ -53,12 +53,34 @@ function populateImages(){
 
 function deleteLastCards(){
 	let lastCards = document.getElementsByClassName("col-md-4");
-	let last_item = lastCards.length;
-	console.log(last_item);
+	let lastItem = lastCards.length;
+	console.log(lastItem);
     for (i = 0; i < 3 ; i++) {
         lastCards[lastCards.length - 1 ].remove();
 	}
 }
+
+//6) Modification 3 premières cards
+
+function changeCardsText(){
+	let textsArray = ["L’HyperText Markup Language, généralement abrégé HTML, est le langage de balisage conçu pour représenter les pages web", "Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML", "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives mais aussi pour les serveurs. C'est un langage orienté objet à prototype."];
+	let cardTexts = document.getElementsByClassName("card-text");
+	console.log(cardTexts[0].innerHTML);
+	for (i = 0; i < 3 ; i++){
+		cardTexts[i].innerHTML = textsArray[i]
+	}
+}
+
+//7) Modification buttons
+
+function changeViewButtons(){
+	let cardsButtons = document.getElementsByClassName("col-md-4");
+	for (i = 0; i < cardsButtons.length; i++){
+		cardsButtons[i].getElementsByTagName("button")[0].attributes[1].value = "btn btn-sm btn-success";
+	}
+}
+
+
 
 
 changeTitles()
@@ -66,3 +88,5 @@ changeCallToActions()
 changeLogoName()
 populateImages()
 deleteLastCards()
+changeCardsText()
+changeViewButtons()
